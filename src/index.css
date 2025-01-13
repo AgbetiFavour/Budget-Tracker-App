@@ -1,0 +1,16 @@
+@font-face {
+  font-family: Poppin;
+  src: url("../public/fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: Hanken;
+  src: url("../public/fonts/HankenGrotesk-VariableFont_wght.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Hanken", Courier, monospace;
+  transition: all 0.2s ease;
+}
