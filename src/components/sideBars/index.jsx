@@ -109,7 +109,7 @@ const Sidebar = () => {
             isaCtive={false}
             onClick={handleLogout}
             icon={() => <AiOutlineLogout color="#dfdfdf" />}
-            title={"Log Out"}
+            // title={"Log Out"}
           />
         </Flex>
       </Box>
