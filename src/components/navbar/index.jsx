@@ -13,7 +13,7 @@ const NavBar = () => {
 			py={["5px", "5px"]}
 			w="100%"
 			bg="transparent">
-			<Text fontSize={{base:'18px',md:"28px"}} color="#373B47">
+			<Text fontSize={{ base: "18px", md: "28px" }} color="#373B47">
 				Budget Tracker App
 			</Text>
 
@@ -39,7 +39,7 @@ const NavBar = () => {
 						size="sm"
 						bg="#003EFF"
 						color="secondaryGray.1000"
-						name="Favour Agbeti"
+						name=" FORTUNAE IT Solutions"
 						src="https://bit.ly/broken-link"
 					/>
 				</HStack>

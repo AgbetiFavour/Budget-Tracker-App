@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { Box } from "@chakra-ui/react"
+import { Box, useColorModeValue } from "@chakra-ui/react"
 import { PieChart, Pie, Cell, Tooltip } from "recharts"
 
 const SpendingChart = () => {
@@ -19,8 +19,19 @@ const SpendingChart = () => {
 
 	const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"]
 
+	// Dynamic background and text colors for dark mode
+	const bgColor = useColorModeValue("white", "gray.800")
+	const textColor = useColorModeValue("black", "white")
+
 	return (
-		<Box bg="white" p={4} rounded="md" shadow="md">
+		<Box
+			bg={bgColor}
+			color={textColor}
+			p={4}
+			rounded="md"
+			shadow="md"
+			textAlign="center" // Ensure alignment remains the same
+		>
 			<PieChart width={400} height={400}>
 				<Pie
 					data={data}
@@ -34,7 +45,13 @@ const SpendingChart = () => {
 						<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
 					))}
 				</Pie>
-				<Tooltip />
+				<Tooltip
+					contentStyle={{
+						backgroundColor: bgColor,
+						color: textColor,
+						border: `1px solid ${textColor}`,
+					}}
+				/>
 			</PieChart>
 		</Box>
 	)

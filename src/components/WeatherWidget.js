@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { Box, Text, Spinner } from "@chakra-ui/react"
+import { Box, Text, Spinner, useColorModeValue } from "@chakra-ui/react"
 
 const WeatherWidget = () => {
 	const [weather, setWeather] = useState(null)
@@ -23,8 +23,12 @@ const WeatherWidget = () => {
 		fetchWeather()
 	}, [])
 
+	const bgColor = useColorModeValue("white", "gray.800")
+		const textColor = useColorModeValue("black", "white")
+	
+
 	return (
-		<Box bg="white" p={4} rounded="md" shadow="md">
+		<Box bg={bgColor} color={textColor} p={4} rounded="md" shadow="md">
 			{loading ? (
 				<Spinner />
 			) : weather ? (

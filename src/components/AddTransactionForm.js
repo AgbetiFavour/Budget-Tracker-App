@@ -10,9 +10,14 @@ import {
 	Select,
 	VStack,
 	Text,
+	useColorModeValue,
 } from "@chakra-ui/react"
 
 const AddTransactionForm = () => {
+
+	const bgColor = useColorModeValue("white", "gray.800")
+		const textColor = useColorModeValue("black", "white")
+	
 	const [formData, setFormData] = useState({
 		title: "",
 		amount: "",
@@ -45,13 +50,14 @@ const AddTransactionForm = () => {
 	}
 
 	return (
-		<Box bg="white" p={4} rounded="md" shadow="md">
+		<Box bg={bgColor} color={textColor} p={4} rounded="md" shadow="md">
 			<form onSubmit={handleSubmit}>
 				<VStack spacing={4}>
 					<FormControl isInvalid={errors.title}>
 						<FormLabel>Title</FormLabel>
 						<Input
 							placeholder="e.g., Salary"
+							color={textColor}
 							value={formData.title}
 							onChange={(e) =>
 								setFormData((prev) => ({ ...prev, title: e.target.value }))
@@ -66,6 +72,7 @@ const AddTransactionForm = () => {
 					<FormControl isInvalid={errors.amount}>
 						<FormLabel>Amount</FormLabel>
 						<Input
+							color={textColor}
 							type="number"
 							placeholder="e.g., 500"
 							value={formData.amount}
@@ -82,6 +89,7 @@ const AddTransactionForm = () => {
 					<FormControl>
 						<FormLabel>Category</FormLabel>
 						<Select
+							color={textColor}
 							value={formData.category}
 							onChange={(e) =>
 								setFormData((prev) => ({ ...prev, category: e.target.value }))

@@ -1,4 +1,6 @@
 export const urlRoutes = {
-  home: "/",
-  overview: "/overview",
-};
+	home: "/",
+	budgetOverview: "budget_overview",
+	transactionHistory: "transactions_history",
+	setting: "/setting",
+}

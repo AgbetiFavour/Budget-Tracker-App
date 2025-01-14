@@ -6,53 +6,36 @@ import {
   useColorMode,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { FiMenu, FiUsers } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
 import { IoHome } from "react-icons/io5";
-
 import { useLocation } from "react-router-dom";
 import { urlRoutes } from "../../routes/urlRoutes";
-
 import { AiOutlineLogout } from "react-icons/ai";
 import MenuListItems from "../menuListItems";
 import { BiCategory } from "react-icons/bi";
-import { TbInvoice, TbSettings2 } from "react-icons/tb";
-import { HiOutlineChatBubbleLeftEllipsis } from "react-icons/hi2";
+import { TbSettings2 } from "react-icons/tb";
 
 const sideMenuItems = [
 	{
-		title: "Getting Started ",
+		title: "Home",
 		icon: <IoHome color={"#dfdfdf"} />,
 		link: urlRoutes.home,
 	},
 	{
 		title: "Overview",
 		icon: <BiCategory color={"#dfdfdf"} />,
-		link: urlRoutes.home,
+		link: urlRoutes.budgetOverview,
 	},
 	{
-		title: "Account ",
+		title: "Transaction History ",
 		icon: <IoHome color={"#dfdfdf"} />,
-		link: urlRoutes.home,
+		link: urlRoutes.transactionHistory,
 	},
-	{
-		title: "Invoice ",
-		icon: <TbInvoice color={"#dfdfdf"} />,
-		link: urlRoutes.home,
-	},
-	{
-		title: "Beneficiary Management",
-		icon: <FiUsers color={"#dfdfdf"} />,
-		link: urlRoutes.home,
-	},
-	{
-		title: "Help Center",
-		icon: <HiOutlineChatBubbleLeftEllipsis color={"#dfdfdf"} />,
-		link: urlRoutes.home,
-	},
+
 	{
 		title: "Settings",
 		icon: <TbSettings2 color={"#dfdfdf"} />,
-		link: urlRoutes.home,
+		link: urlRoutes.setting,
 	},
 ]
 

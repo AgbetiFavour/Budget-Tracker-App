@@ -1,40 +1,28 @@
-import {
-	useColorMode,
-	Box,
-	Image,
-	Text,
-	HStack,
-	Button,
-	VStack,
-  Stack,
-  Avatar,
-  GridItem,
-  Grid,
-} from "@chakra-ui/react"
-import dash from "../../assets/category.png"
-import money from "../../assets/money.png"
-import user from "../../assets/profile-2user.png"
-import setting from "../../assets/setting.png"
-import profile from "../../assets/Profile.png"
+import { useColorMode, Box, GridItem, Grid } from "@chakra-ui/react"
 import AddTransactionForm from "../../components/AddTransactionForm"
-import SpendingChart from "../../components/ SpendingChart"
+import SpendingChart from "../../components/SpendingChart"
 import WeatherWidget from "../../components/WeatherWidget"
 
 const Home = () => {
 	const { colorMode } = useColorMode()
 	const isDarkMode = colorMode !== "light"
 
-	
+	// Colors for dark and light modes
+	const bgColor = isDarkMode ? "gray.800" : "white"
+	const textColor = isDarkMode ? "white" : "black"
 
 	return (
 		<>
-			{/* <Layout> */}
 			<Grid
 				templateColumns={{
 					base: "repeat(1, 1fr)",
 					md: "repeat(2, 1fr)",
 				}}
-				gap={4}>
+				gap={4}
+				bg={bgColor}
+				color={textColor}
+				p={4}
+				rounded="md">
 				<GridItem>
 					<AddTransactionForm />
 				</GridItem>
@@ -42,13 +30,11 @@ const Home = () => {
 					<WeatherWidget />
 				</GridItem>
 			</Grid>
-			<Box mt={4}>
+			<Box mt={4} bg={bgColor} color={textColor} p={4} rounded="md">
 				<SpendingChart />
 			</Box>
-			{/* </Layout> */}
 		</>
 	)
 }
 
 export default Home
-
