@@ -14,10 +14,9 @@ import {
 } from "@chakra-ui/react"
 
 const AddTransactionForm = () => {
-
 	const bgColor = useColorModeValue("white", "gray.800")
-		const textColor = useColorModeValue("black", "white")
-	
+	const textColor = useColorModeValue("black", "white")
+
 	const [formData, setFormData] = useState({
 		title: "",
 		amount: "",
@@ -96,6 +95,15 @@ const AddTransactionForm = () => {
 							}>
 							<option value="Income">Income</option>
 							<option value="Expense">Expense</option>
+							<option value="Groceries">Groceries</option>
+							<option value="Rent">Rent</option>
+							<option value="Utilities">Utilities</option>
+							<option value="Transportation">Transportation</option>
+							<option value="Entertainment">Entertainment</option>
+							<option value="Healthcare">Healthcare</option>
+							<option value="Savings">Savings</option>
+							<option value="Education">Education</option>
+							<option value="Miscellaneous">Miscellaneous</option>
 						</Select>
 					</FormControl>
 					<Button colorScheme="blue" type="submit">

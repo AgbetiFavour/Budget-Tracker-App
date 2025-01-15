@@ -25,6 +25,11 @@ const TransactionHistory = () => {
 	const borderColor = useColorModeValue("gray.200", "gray.600")
 	const textColor = useColorModeValue("black", "white")
 
+	// Extract unique categories dynamically
+	const uniqueCategories = [
+		...new Set(transactions.map((transaction) => transaction.category)),
+	]
+
 	// Filtered transactions based on search query and selected category
 	const filteredTransactions = transactions.filter((transaction) => {
 		const matchesCategory =
@@ -58,8 +63,11 @@ const TransactionHistory = () => {
 					color={textColor}
 					borderColor={borderColor}
 					_focus={{ borderColor: useColorModeValue("blue.500", "blue.300") }}>
-					<option value="Income">Income</option>
-					<option value="Expense">Expense</option>
+					{uniqueCategories.map((category) => (
+						<option key={category} value={category}>
+							{category}
+						</option>
+					))}
 				</Select>
 			</VStack>
 			<VStack spacing={4}>
